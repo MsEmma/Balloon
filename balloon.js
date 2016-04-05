@@ -137,6 +137,6 @@ exports.getMostRemaining = function(remainder) {
 
 exports.getLeastRemaining = function(remainder) {
 
-  return mostRemain = remainder[0];
+  return leastRemain = remainder[0];
 
 }
