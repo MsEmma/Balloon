@@ -68,23 +68,23 @@ describe("balloon", function() {
                                  ],[{ popped: 5 ,color: 'red'},
                                    { popped: 1 ,color: 'blue'},
                                    { popped: 3 ,color: 'yellow'}]);
-    assert.deepEqual(result, [{ left: 7 ,color: 'red'},
-                          { left: 8 ,color: 'blue'},
-                          { left: 6 ,color: 'yellow'} ]);
+    assert.deepEqual(result, [{ left: 6 ,color: 'yellow'},
+                              { left: 7 ,color: 'red'},
+                              { left: 8 ,color: 'blue'}]);
   });
 
   it("should return  which colour has the most balloons", function() {
-    result = balloon.getMostRemaining([{ left: 7 ,color: 'red'},
-                                       { left: 8 ,color: 'blue'},
-                                       { left: 6 ,color: 'yellow'}]);
-    assert.deepEqual(result, "red");
+    result = balloon.getMostRemaining([{ left: 6 ,color: 'yellow'},
+                                       { left: 7 ,color: 'red'},
+                                       { left: 8 ,color: 'blue'}]);
+    assert.deepEqual(result, { left: 8, color: 'blue' });
   });
 
   it("should return  which colour has the least balloons", function() {
-    result = balloon.getLeastRemaining([{ left: 7 ,color: 'red'},
-                                        { left: 8 ,color: 'blue'},
-                                        { left: 6 ,color: 'yellow'}]);
-    assert.equal(result, "yellow");
+    result = balloon.getLeastRemaining([{ left: 6 ,color: 'yellow'},
+                                        { left: 7 ,color: 'red'},
+                                        { left: 8 ,color: 'blue'}]);
+    assert.deepEqual(result, { left: 6, color: 'yellow' });
   });
 
 });

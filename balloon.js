@@ -106,3 +106,37 @@ exports.getPeopleWithout = function(popped) {
   return peopleWithout;
 
 }
+
+exports.getRemaining = function(numbers, popped) {
+
+  var remainder = [];
+
+  numbers.forEach(function(numObj) {
+    popped.forEach(function(popObj) {
+      if (numObj.color === popObj.color) {
+        remainder.push({
+          "left": (numObj.number - popObj.popped),
+          "color": numObj.color
+        });
+      }
+    })
+  })
+
+  remainder.sort(function(a, b) {
+    return a.left - b.left;
+  });
+
+  return remainder;
+}
+
+exports.getMostRemaining = function(remainder) {
+
+  return mostRemain = remainder[remainder.length - 1];
+
+}
+
+exports.getLeastRemaining = function(remainder) {
+
+  return mostRemain = remainder[0];
+
+}
